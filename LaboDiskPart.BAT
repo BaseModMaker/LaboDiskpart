@@ -1,8 +1,13 @@
+@echo off
+
 :VarInit
 set Chosendisk = 2
 set Part1Letter = E
 set Part2Letter = F
-@echo off
+
+:Menu
+
+cls
 
 echo.
 echo.....................
@@ -33,6 +38,10 @@ if %MenuChoice% == 1 (goto ETIQUETTE1) else (goto Exit)
 	echo assign letter = %Part2Letter%
 	echo format fs=ntfs quick
 ) | diskpart
+
+pause
+
+goto Menu
 
 :Exit
 PAUSE
